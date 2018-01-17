@@ -20,6 +20,15 @@ def df_string(df, percentage_columns=(), format_map=None, **kwargs):
     -------
     str
         A nicely formatted string for the given dataframe.
+
+    Example
+    -------
+    >>> import pandas as pd
+    >>> df = pd.DataFrame([[8,'a'],[5,'b']],[1,2],['num', 'char'])
+    >>> print(df_string(df))
+       num char
+    1    8    a
+    2    5    b
     """
     formatters_map = {}
     for col, dtype in df.dtypes.iteritems():
@@ -33,7 +42,7 @@ def df_string(df, percentage_columns=(), format_map=None, **kwargs):
     return df.to_string(formatters=formatters_map, **kwargs)
 
 
-def big_dataframe_setup():
+def big_dataframe_setup():   # pragma: no cover
     """Sets pandas to display really big data frames."""
     pd.set_option('display.max_colwidth', sys.maxsize)
     pd.set_option('max_colwidth', sys.maxsize)
@@ -50,11 +59,11 @@ def big_dataframe_setup():
 _PRECENT_WORDS = ['rate', 'ratio', 'percentage']
 
 
-def _default_is_precentage_col(col_name):
+def _default_is_precentage_col(col_name):  # pragma: no cover
     return any([word in col_name.lower() for word in _PRECENT_WORDS])
 
 
-def _formatters_dict(input_df, percentage_columns=None):
+def _formatters_dict(input_df, percentage_columns=None):  # pragma: no cover
     formatters = {}
     if percentage_columns is None:
         is_precentage_col = _default_is_precentage_col
@@ -68,7 +77,7 @@ def _formatters_dict(input_df, percentage_columns=None):
     return formatters
 
 
-def df_to_html(df, percentage_columns=None):
+def df_to_html(df, percentage_columns=None):  # pragma: no cover
     """Return a nicely formatted HTML code string for the given dataframe.
 
     Arguments
