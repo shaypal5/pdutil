@@ -45,6 +45,13 @@ Functions related to iterating over ``pandas`` dataframes:
 * ``sub_dfs_by_size`` - Get a generator yielding consecutive sub-dataframes of the given size.
 * ``sub_dfs_by_num`` - Get a generator yielding num consecutive sub-dataframes of the given df. 
 
+transform
+---------
+
+* ``x_y_by_col_lbl`` - Returns an X dataframe and a y series by the given column name.
+* ``or_by_masks`` - Returns a sub-dataframe by the logical or over the given masks. 
+
+
 Contributing
 ============
 
