@@ -3,6 +3,7 @@
 import pdutil.display
 import pdutil.iter
 import pdutil.transform
+import pdutil.serial
 
 from ._version import get_versions
 __version__ = get_versions()['version']

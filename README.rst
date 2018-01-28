@@ -51,6 +51,11 @@ transform
 * ``x_y_by_col_lbl`` - Returns an X dataframe and a y series by the given column name.
 * ``or_by_masks`` - Returns a sub-dataframe by the logical or over the given masks. 
 
+serial
+------
+
+* ``SerializationFormat`` - A mutli-singleton representing different serialization formats of dataframes.
+
 
 Contributing
 ============
