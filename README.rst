@@ -116,8 +116,8 @@ Created by Shay Palachy (shay.palachy@gmail.com).
 .. |Build-Status| image:: https://travis-ci.org/shaypal5/pdutil.svg?branch=master
   :target: https://travis-ci.org/shaypal5/pdutil
 
-.. |LICENCE| image:: https://img.shields.io/pypi/l/pdutil.svg
-  :target: https://pypi.python.org/pypi/pdutil
+.. |LICENCE| image:: https://img.shields.io/github/license/shaypal5/pdutil.svg
+  :target: https://github.com/shaypal5/pdutil/blob/master/LICENSE
 
 .. |Codecov| image:: https://codecov.io/github/shaypal5/pdutil/coverage.svg?branch=master
    :target: https://codecov.io/github/shaypal5/pdutil?branch=master
