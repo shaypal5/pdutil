@@ -48,9 +48,13 @@ SerializationFormat.csv = SerializationFormat(
 )
 SerializationFormat.__save_by_name__('csv', SerializationFormat.csv)
 
-SerializationFormat.feather = SerializationFormat(
-    ext='feather',
-    serialize=pd.DataFrame.to_feather,
-    deserialize=pd.read_feather,
-)
-SerializationFormat.__save_by_name__('feather', SerializationFormat.feather)
+try:
+    SerializationFormat.feather = SerializationFormat(
+        ext='feather',
+        serialize=pd.DataFrame.to_feather,
+        deserialize=pd.read_feather,
+    )
+    SerializationFormat.__save_by_name__(
+        'feather', SerializationFormat.feather)
+except AttributeError:
+    pass  # pandas under 0.20 - feather is not a valid serialization format

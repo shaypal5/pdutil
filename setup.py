@@ -11,7 +11,7 @@ import versioneer
 
 # Require Python 3.4 or higher
 if sys.version_info.major < 3 or sys.version_info.minor < 4:
-    warnings.warn("pdutil requires Python 3.4444 or higher!")
+    warnings.warn("pdutil requires Python 3.4 or higher!")
     sys.exit(1)
 
 
