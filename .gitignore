@@ -96,3 +96,6 @@ tags
 
 # vim swap files
 *.swp
+
+# osx stupid files
+.DS_Store
