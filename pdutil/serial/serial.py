@@ -48,6 +48,15 @@ SerializationFormat.csv = SerializationFormat(
 )
 SerializationFormat.__save_by_name__('csv', SerializationFormat.csv)
 
+
+SerializationFormat.json = SerializationFormat(
+    ext='json',
+    serialize=pd.DataFrame.to_json,
+    deserialize=pd.read_json,
+)
+SerializationFormat.__save_by_name__('json', SerializationFormat.json)
+
+
 try:
     SerializationFormat.feather = SerializationFormat(
         ext='feather',

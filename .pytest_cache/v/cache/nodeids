@@ -1,0 +1,14 @@
+[
+  "tests/transform/test_or_by_masks.py::test_base_case",
+  "tests/transform/test_or_by_masks.py::test_no_masks",
+  "tests/transform/test_or_by_masks.py::test_one_mask",
+  "tests/transform/test_or_by_masks.py::test_three_masks",
+  "pdutil/display/display.py::pdutil.display.display.df_string",
+  "pdutil/iter/iter.py::pdutil.iter.iter.sub_dfs_by_num",
+  "pdutil/iter/iter.py::pdutil.iter.iter.sub_dfs_by_size",
+  "pdutil/serial/serial.py::pdutil.serial.serial.SerializationFormat.by_name",
+  "pdutil/transform/transform.py::pdutil.transform.transform.or_by_mask_conditions",
+  "pdutil/transform/transform.py::pdutil.transform.transform.or_by_masks",
+  "pdutil/transform/transform.py::pdutil.transform.transform.x_y_by_col_lbl",
+  "pdutil/transform/transform.py::pdutil.transform.transform.x_y_by_col_lbl_inplace"
+]
