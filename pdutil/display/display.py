@@ -49,6 +49,7 @@ def big_dataframe_setup():   # pragma: no cover
     # height has been deprecated.
     # pd.set_option('display.height', sys.maxsize)
     pd.set_option('display.max_rows', sys.maxsize)
+    pd.set_option('display.max_columns', sys.maxsize)
     pd.set_option('display.width', sys.maxsize)
     pd.set_option('display.colheader_justify', 'center')
     pd.set_option('display.column_space', sys.maxsize)
