@@ -1,12 +1,19 @@
+dist: xenial
 language: python
-python:
-- '3.5'
-- '3.6'
+cache: pip
 matrix:
   include:
-    - python: 3.7
-      dist: xenial
-      sudo: true
+    - name: "3.5"
+      python: 3.5
+    - name: "3.6"
+      python: 3.6
+    - name: "3.7"
+      python: 3.7
+    - name: "3.8-dev"
+      python: 3.8-dev
+  allow_failures:
+    - name: "3.8-dev"
+      python: 3.8-dev
 # notifications:
 #   email:
 #     on_success: change
