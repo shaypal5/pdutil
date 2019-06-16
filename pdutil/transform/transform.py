@@ -72,11 +72,7 @@ def x_y_by_col_lbl_inplace(df, y_col_lbl):
     Name: D, dtype: int64
     """
     y = df[y_col_lbl]
-    df.drop(
-        labels=y_col_lbl,
-        axis=1,
-        inplace=True,
-    )
+    df.drop(labels=y_col_lbl, axis=1, inplace=True)
     return df, y
 
 

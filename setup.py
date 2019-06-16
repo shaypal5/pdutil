@@ -15,40 +15,36 @@ if sys.version_info.major < 3 or sys.version_info.minor < 4:
     sys.exit(1)
 
 
-INSTALL_REQUIRES = ['numpy', 'pandas']
-TEST_REQUIRES = ['pytest', 'coverage', 'pytest-cov']
+INSTALL_REQUIRES = ["numpy", "pandas"]
+TEST_REQUIRES = ["pytest", "coverage", "pytest-cov"]
 
-with open('README.rst') as f:
+with open("README.rst") as f:
     README = f.read()
 
 setuptools.setup(
     author="Shay Palachy",
     author_email="shay.palachy@gmail.com",
-    name='pdutil',
-    description='Utilities for pandas.',
+    name="pdutil",
+    description="Utilities for pandas.",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     long_description=README,
-    url='https://github.com/shaypal5/pdutil',
+    url="https://github.com/shaypal5/pdutil",
     packages=setuptools.find_packages(),
     include_package_data=True,
-    install_requires=[
-        INSTALL_REQUIRES
-    ],
-    extras_require={
-        'test': TEST_REQUIRES + INSTALL_REQUIRES,
-    },
+    install_requires=[INSTALL_REQUIRES],
+    extras_require={"test": TEST_REQUIRES + INSTALL_REQUIRES},
     classifiers=[
         # Trove classifiers
         # (https://pypi.python.org/pypi?%3Aaction=list_classifiers)
-        'Development Status :: 4 - Beta',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'Intended Audience :: Developers',
+        "Development Status :: 4 - Beta",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Intended Audience :: Developers",
     ],
 )

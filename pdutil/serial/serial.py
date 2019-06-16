@@ -4,14 +4,13 @@ import pandas as pd
 
 
 class SerializationFormat(object):
-
     def __init__(self, ext, serialize, deserialize):
         self.ext = ext
         self.serialize = serialize
         self.deserialize = deserialize
 
     def __repr__(self):
-        return '<pdutil.serial.SerializationFormat.{}>'.format(self.ext)
+        return "<pdutil.serial.SerializationFormat.{}>".format(self.ext)
 
     __NAME_TO_OBJ__ = {}
 
@@ -42,28 +41,25 @@ class SerializationFormat(object):
 
 
 SerializationFormat.csv = SerializationFormat(
-    ext='csv',
-    serialize=pd.DataFrame.to_csv,
-    deserialize=pd.read_csv,
+    ext="csv", serialize=pd.DataFrame.to_csv, deserialize=pd.read_csv
 )
-SerializationFormat.__save_by_name__('csv', SerializationFormat.csv)
+SerializationFormat.__save_by_name__("csv", SerializationFormat.csv)
 
 
 SerializationFormat.json = SerializationFormat(
-    ext='json',
-    serialize=pd.DataFrame.to_json,
-    deserialize=pd.read_json,
+    ext="json", serialize=pd.DataFrame.to_json, deserialize=pd.read_json
 )
-SerializationFormat.__save_by_name__('json', SerializationFormat.json)
+SerializationFormat.__save_by_name__("json", SerializationFormat.json)
 
 
 try:
     SerializationFormat.feather = SerializationFormat(
-        ext='feather',
+        ext="feather",
         serialize=pd.DataFrame.to_feather,
         deserialize=pd.read_feather,
     )
     SerializationFormat.__save_by_name__(
-        'feather', SerializationFormat.feather)
+        "feather", SerializationFormat.feather
+    )
 except AttributeError:
     pass  # pandas under 0.20 - feather is not a valid serialization format

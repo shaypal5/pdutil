@@ -1,6 +1,6 @@
 pdutil
 ######
-|PyPI-Status| |PyPI-Versions| |Build-Status| |Codecov| |LICENCE|
+|PyPI-Status| |PyPI-Versions| |Build-Status| |Codecov| |LICENCE| |Black|
 
 Utilities for pandas.
 
@@ -121,3 +121,7 @@ Created by Shay Palachy (shay.palachy@gmail.com).
 
 .. |Codecov| image:: https://codecov.io/github/shaypal5/pdutil/coverage.svg?branch=master
    :target: https://codecov.io/github/shaypal5/pdutil?branch=master
+
+.. |Black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/python/black
+

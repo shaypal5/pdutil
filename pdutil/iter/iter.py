@@ -29,7 +29,7 @@ def sub_dfs_by_size(df, size):
     2   15  Fin
     """
     for i in range(0, len(df), size):
-        yield (df.iloc[i:i + size])
+        yield (df.iloc[i : i + size])
 
 
 def sub_dfs_by_num(df, num):
@@ -61,4 +61,4 @@ def sub_dfs_by_num(df, num):
     """
     size = len(df) / float(num)
     for i in range(num):
-        yield df.iloc[int(round(size * i)): int(round(size * (i + 1)))]
+        yield df.iloc[int(round(size * i)) : int(round(size * (i + 1)))]

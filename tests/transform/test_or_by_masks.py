@@ -5,9 +5,9 @@ import pandas as pd
 from pdutil.transform import or_by_masks
 
 
-DF_DATA = [[23, 'Jo'], [19, 'Mi'], [15, 'Di']]
+DF_DATA = [[23, "Jo"], [19, "Mi"], [15, "Di"]]
 DF_IX = [1, 2, 3]
-DF_COLS = ['Age', 'Name']
+DF_COLS = ["Age", "Name"]
 
 
 def test_base_case():
@@ -36,9 +36,9 @@ def test_one_mask():
     assert 3 in res_df.index
 
 
-BIG_DF_DATA = [[3, 'A'], [1, 'D'], [4, 'C'], [6, 'G'], [2, 'W']]
+BIG_DF_DATA = [[3, "A"], [1, "D"], [4, "C"], [6, "G"], [2, "W"]]
 BIG_DF_IX = [1, 2, 3, 4, 5]
-BIG_DF_COLS = ['Num', 'Char']
+BIG_DF_COLS = ["Num", "Char"]
 
 
 def test_three_masks():
