@@ -144,3 +144,56 @@ def or_by_mask_conditions(df, mask_conditions):
     3   15   Di
     """
     return or_by_masks(df, [cond(df) for cond in mask_conditions])
+
+
+def generate_lags(df, lags=None, columns=None, fill_value=None, dropna=None):
+    """Generate lags of columns in the given dataframe.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        The dataframe to generage lags for.
+    lags : list of int, optional
+        A list of the lags to generate. If an integer is given instead, it is
+        interpreted as the maximum lag to generate, and all integer lags up
+        to it are generated. E.g. providing lags=4 corresponds to providing
+        lags=[1, 2, 3, 4].
+    columns : list of str, optional
+        The labels of columns for which to generate lags. If not given, lags
+        are generated for all columns.
+    fill_value : object, optional
+        The scalar value to use for newly introduced missing values. See the
+        documentation of the corresponding parameter of the
+        pandas.DataFrame.shift method for more information.
+    dropna : bool, optional
+        If set to True, all rows containing null values are dropped. If
+        fill_value is not provided this results in trimming all columns to
+        their overall intersection.
+
+    Returns
+    -------
+    pandas.DataFrame
+        The dataframe containing all generated lags.
+
+    Example
+    -------
+    >>> import pandas as pd
+    >>> data = [[1], [2], [3], [4], [5]]
+    >>> df = pd.DataFrame(data, [1, 2, 3, 4, 5] , ['p'])
+    >>> generate_lags(df, lags=2, dropna=True)
+        p  p1  p2
+    3   3  2   1
+    4   4  3   2
+    5   5  4   3
+    """
+    if isinstance(lags, int):
+        lags = list(range(1, lags + 1))
+    all_lags = {}
+    all_columns = []
+    for colbl in df.columns:
+        col = df[colbl]
+        clags = {f'{colbl}-{i}': col.shift(i) for i in lags}
+        clags[colbl] = col
+        all_lags.update(clags)
+        clbls = [colbl] + [f'{colbl}-{i}' for i in lags)
+        all_columns.extend(clbls)
